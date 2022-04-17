@@ -2,6 +2,17 @@
 
 A new Flutter project. to earn features of flutter
 
+---
+### Learning Path
+* One Page Application `18 & 19 Apr 2022`
+    * Scrolling
+    * Box
+    * Image
+    * Button
+    * Text and function to change 
+    * Building 
+---
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
