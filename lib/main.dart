@@ -25,15 +25,40 @@ class HomePage extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: const <Widget>[
-            DrawerHeader(
-              child: Text(
-                "Akshay Kumar",
-                style: TextStyle(
-                  color: Colors.yellowAccent,
-                  fontSize: 20,
-                ),
+            // DrawerHeader(
+            //   child: Text(
+            //     "Akshay Kumar",
+            //     style: TextStyle(
+            //       color: Colors.yellowAccent,
+            //       fontSize: 20,
+            //     ),
+            //   ),
+            //   decoration: BoxDecoration(color: Colors.indigo),
+            // ),
+            UserAccountsDrawerHeader(
+              accountName: Text("Akshay Kumar"),
+              accountEmail: Text("x1akshay@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://wallpapercave.com/dwp1x/wp1865023.jpg"),
               ),
-              decoration: BoxDecoration(color: Colors.indigo),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Account"),
+              subtitle: Text("Akshay"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Email"),
+              subtitle: Text("x1akshay@gmail.com"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.keyboard),
+              title: Text("Keyboard"),
+              subtitle: Text("Layout"),
             )
           ],
         ),
