@@ -21,6 +21,23 @@ class HomePage extends StatelessWidget {
         title: const Text("Flutter App"),
       ),
       body: Container(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const <Widget>[
+            DrawerHeader(
+              child: Text(
+                "Akshay Kumar",
+                style: TextStyle(
+                  color: Colors.yellowAccent,
+                  fontSize: 20,
+                ),
+              ),
+              decoration: BoxDecoration(color: Colors.indigo),
+            )
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.edit),
