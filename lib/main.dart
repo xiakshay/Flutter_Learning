@@ -15,10 +15,12 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Center(child: Text("Hi! Developers")),
-          color: Color.fromARGB(255, 68, 56, 101),
+          padding: const EdgeInsets.all(15),
+          margin: const EdgeInsets.all(5),
+          color: Color.fromARGB(255, 95, 212, 140),
           height: 100,
           width: 100,
+          child: Text("Hi! Developers"),
         ),
       ),
     );
