@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    title: "Flutter App",
-    home: HomePage(),
-  ));
+  runApp(
+    MaterialApp(
+      title: "Flutter App",
+      home: const HomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
+    ),
+  );
 }
 
 class HomePage extends StatelessWidget {
@@ -15,46 +20,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Flutter App"),
       ),
-      body: Align(
-        alignment: Alignment.bottomRight,
-        child: Container(
-          color: Colors.black,
-          // width: MediaQuery.of(context).size.width, //for full width and height
-          // height: MediaQuery.of(context).size.height,
-          width: 200,
-          height: 360,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment
-                .center, //this is for changing div in center but in this case i have directly changed the div to center
-            children: [
-              Container(
-                padding: const EdgeInsets.all(15),
-                margin: const EdgeInsets.all(5),
-                alignment: Alignment.center,
-                height: 100,
-                width: 100,
-                color: Colors.red,
-              ),
-              Container(
-                padding: const EdgeInsets.all(15),
-                margin: const EdgeInsets.all(5),
-                alignment: Alignment.center,
-                height: 100,
-                width: 100,
-                color: Colors.yellow,
-              ),
-              Container(
-                padding: const EdgeInsets.all(15),
-                margin: const EdgeInsets.all(5),
-                alignment: Alignment.center,
-                height: 100,
-                width: 100,
-                color: Colors.pink,
-              ),
-            ],
-          ),
-        ),
+      body: Container(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.edit),
       ),
     );
   }
