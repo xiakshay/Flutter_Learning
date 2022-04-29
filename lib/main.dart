@@ -17,6 +17,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Container(
         child: Center(child: Text("Hi! Developers")),
+        color: Colors.green,
       ),
     );
   }
