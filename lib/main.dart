@@ -16,8 +16,9 @@ class HomePage extends StatelessWidget {
         title: const Text("Flutter App"),
       ),
       body: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // crossAxisAlignment: CrossAxisAlignment.center, //this is for changing div in center but in this case i have directly changed the div to center
           children: [
             Container(
               padding: const EdgeInsets.all(15),
