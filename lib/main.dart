@@ -45,58 +45,8 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(26),
         child: SingleChildScrollView(
             child: Card(
-          child: Column(
-            children: <Widget>[
-              const BackgroundImage(), // sent into another dart file i.e bgImages
-              const SizedBox(height: 20),
-              const Text(
-                "Second Pic",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 35, 141, 190),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 20),
-              Image.asset(
-                "Assets/Images/img2.jpg",
-                fit: BoxFit.cover,
-                // width: 300,
-              ),
-              const Padding(
-                padding: EdgeInsets.all(20),
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                "Fill Here...",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 74, 88, 180),
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                myText,
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 132, 202, 97),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: _textEditingController,
-                keyboardType: const TextInputType
-                    .numberWithOptions(), // change it accordangly on your needs
-                decoration: const InputDecoration(
-                  hintText: "Enter Your Phone Number",
-                  labelText: "Phone",
-                  border: OutlineInputBorder(),
-                ),
-              )
-            ],
-          ),
+          child: ChangeNameCard(
+              myText: myText, textEditingController: _textEditingController),
         )),
       ),
       drawer: const MyDrawer(),
@@ -107,6 +57,74 @@ class _HomePageState extends State<HomePage> {
         },
         child: const Icon(Icons.refresh),
       ),
+    );
+  }
+}
+
+class ChangeNameCard extends StatelessWidget {
+  const ChangeNameCard({
+    Key? key,
+    required this.myText,
+    required TextEditingController textEditingController,
+  })  : _textEditingController = textEditingController,
+        super(key: key);
+
+  final String myText;
+  final TextEditingController _textEditingController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        const BackgroundImage(), // sent into another dart file i.e bgImages
+        const SizedBox(height: 20),
+        const Text(
+          "Second Pic",
+          style: TextStyle(
+            color: Color.fromARGB(255, 35, 141, 190),
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 20),
+        Image.asset(
+          "Assets/Images/img2.jpg",
+          fit: BoxFit.cover,
+          // width: 300,
+        ),
+        const Padding(
+          padding: EdgeInsets.all(20),
+        ),
+        const SizedBox(height: 20),
+        const Text(
+          "Fill Here...",
+          style: TextStyle(
+            color: Color.fromARGB(255, 74, 88, 180),
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          myText,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 132, 202, 97),
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(height: 12),
+        TextField(
+          controller: _textEditingController,
+          keyboardType: const TextInputType
+              .numberWithOptions(), // change it accordangly on your needs
+          decoration: const InputDecoration(
+            hintText: "Enter Your Phone Number",
+            labelText: "Phone",
+            border: OutlineInputBorder(),
+          ),
+        )
+      ],
     );
   }
 }
