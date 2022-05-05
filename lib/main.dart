@@ -22,6 +22,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   get child => null;
 
+  TextEditingController _textEditingController =
+      TextEditingController(); // here `_` is for privet values alse in normal condition it will be public
+
+  var myText = "Change Me ...";
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,11 +77,21 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 15),
-              const TextField(
-                keyboardType: TextInputType
+              const SizedBox(height: 8),
+              Text(
+                myText,
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 132, 202, 97),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: _textEditingController,
+                keyboardType: const TextInputType
                     .numberWithOptions(), // change it accordangly on your needs
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter Your Phone Number",
                   labelText: "Phone",
                   border: OutlineInputBorder(),
@@ -129,7 +149,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          myText = _textEditingController.text;
+          setState(() {});
+        },
         child: const Icon(Icons.refresh),
       ),
     );
