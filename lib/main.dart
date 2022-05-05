@@ -17,10 +17,19 @@ class HomePage extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: const Text("Flutter App"),
       ),
-      body: Container(),
+      body: Center(
+          child: Card(
+        child: Column(
+          children: <Widget>[
+            Image.asset("Assets/Images/img1.jpg"),
+            Image.asset("Assets/Images/img2.jpg")
+          ],
+        ),
+      )),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -37,7 +46,7 @@ class HomePage extends StatelessWidget {
             // ),
             UserAccountsDrawerHeader(
               accountName: Text("Akshay Kumar"),
-              accountEmail: Text("x1akshay@gmail.com"),
+              accountEmail: Text("x0akshay@gmail.com"),
               currentAccountPicture: CircleAvatar(
                 backgroundImage: NetworkImage(
                     "https://wallpapercave.com/dwp1x/wp1865023.jpg"),
@@ -52,13 +61,18 @@ class HomePage extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.email),
               title: Text("Email"),
-              subtitle: Text("x1akshay@gmail.com"),
+              subtitle: Text("x0akshay@gmail.com"),
               trailing: Icon(Icons.edit),
             ),
             ListTile(
-              leading: Icon(Icons.keyboard),
-              title: Text("Keyboard"),
-              subtitle: Text("Layout"),
+              leading: Icon(Icons.book),
+              title: Text("Dockuments"),
+              subtitle: Text("Important Files"),
+            ),
+            ListTile(
+              leading: Icon(Icons.book),
+              title: Text("Dockuments"),
+              subtitle: Text("Important Files"),
             )
           ],
         ),
