@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Text(
-                "Input Area",
+                "Fill Here...",
                 style: TextStyle(
                   color: Color.fromARGB(255, 74, 88, 180),
                   fontSize: 15,
@@ -64,9 +64,11 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               const TextField(
+                keyboardType: TextInputType
+                    .numberWithOptions(), // change it accordangly on your needs
                 decoration: InputDecoration(
-                  hintText: "Enter Review",
-                  labelText: "Type",
+                  hintText: "Enter Your Phone Number",
+                  labelText: "Phone",
                   border: OutlineInputBorder(),
                 ),
               )
@@ -123,7 +125,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: const Icon(Icons.edit),
+        child: const Icon(Icons.refresh),
       ),
     );
   }
