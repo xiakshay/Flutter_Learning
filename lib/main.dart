@@ -15,34 +15,51 @@ void main() {
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  get child => null;
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: const Text("Flutter App"),
       ),
-      body: Center(
-        child: Padding(
-            padding: const EdgeInsets.all(26),
+      body: Padding(
+        padding: const EdgeInsets.all(26),
+        child: SingleChildScrollView(
             child: Card(
-              child: Column(
-                children: <Widget>[
-                  Image.asset(
-                    "Assets/Images/img1.jpg",
-                    fit: BoxFit.fitHeight,
-                    width: 300,
-                  ),
-                  const SizedBox(height: 20),
-                  const Text("Second Pic"),
-                  const SizedBox(height: 20),
-                  Image.asset(
-                    "Assets/Images/img2.jpg",
-                    fit: BoxFit.cover,
-                    width: 300,
-                  )
-                ],
+          child: Column(
+            children: <Widget>[
+              Image.asset(
+                "Assets/Images/img1.jpg",
+                fit: BoxFit.fitHeight,
+                width: 300,
               ),
-            )),
+              const SizedBox(height: 20),
+              const Text(
+                "Second Pic",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 35, 141, 190),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Image.asset(
+                "Assets/Images/img2.jpg",
+                fit: BoxFit.cover,
+                width: 300,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(20),
+              ),
+              const TextField(
+                decoration: InputDecoration(
+                  hintText: "Enter Review",
+                ),
+              )
+            ],
+          ),
+        )),
       ),
       drawer: Drawer(
         child: ListView(
