@@ -22,14 +22,17 @@ class HomePage extends StatelessWidget {
         title: const Text("Flutter App"),
       ),
       body: Center(
-          child: Card(
-        child: Column(
-          children: <Widget>[
-            Image.asset("Assets/Images/img1.jpg"),
-            Image.asset("Assets/Images/img2.jpg")
-          ],
-        ),
-      )),
+        child: Padding(
+            padding: const EdgeInsets.all(26),
+            child: Card(
+              child: Column(
+                children: <Widget>[
+                  Image.asset("Assets/Images/img1.jpg"),
+                  Image.asset("Assets/Images/img2.jpg")
+                ],
+              ),
+            )),
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
