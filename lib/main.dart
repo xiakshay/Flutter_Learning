@@ -17,6 +17,7 @@ class HomePage extends StatelessWidget {
 
   get child => null;
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
@@ -32,7 +33,7 @@ class HomePage extends StatelessWidget {
               Image.asset(
                 "Assets/Images/img1.jpg",
                 fit: BoxFit.fitHeight,
-                width: 300,
+                // width: 300,
               ),
               const SizedBox(height: 20),
               const Text(
@@ -47,14 +48,26 @@ class HomePage extends StatelessWidget {
               Image.asset(
                 "Assets/Images/img2.jpg",
                 fit: BoxFit.cover,
-                width: 300,
+                // width: 300,
               ),
               const Padding(
                 padding: EdgeInsets.all(20),
               ),
+              const SizedBox(height: 20),
+              const Text(
+                "Input Area",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 74, 88, 180),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 15),
               const TextField(
                 decoration: InputDecoration(
                   hintText: "Enter Review",
+                  labelText: "Type",
+                  border: OutlineInputBorder(),
                 ),
               )
             ],
