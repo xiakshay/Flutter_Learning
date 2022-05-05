@@ -15,6 +15,14 @@ A new Flutter project. to earn features of flutter
 
 ## Getting Started
 
+**Learning**
+* Tools
+* Column - Row
+* Sidebar
+* Detials view
+* Buttons
+* Images
+
 **Project - 1**
 * Simple Alarm
   * Set alarm and produce sound
