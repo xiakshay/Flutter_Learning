@@ -1,60 +1,131 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    title: "Flutter App",
-    home: HomePage(),
-  ));
+  runApp(
+    MaterialApp(
+      title: "Flutter App",
+      home: const HomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
+    ),
+  );
 }
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  get child => null;
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: const Text("Flutter App"),
       ),
-      body: Align(
-        alignment: Alignment.bottomRight,
-        child: Container(
-          color: Colors.black,
-          // width: MediaQuery.of(context).size.width, //for full width and height
-          // height: MediaQuery.of(context).size.height,
-          width: 200,
-          height: 360,
+      body: Padding(
+        padding: const EdgeInsets.all(26),
+        child: SingleChildScrollView(
+            child: Card(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment
-                .center, //this is for changing div in center but in this case i have directly changed the div to center
-            children: [
-              Container(
-                padding: const EdgeInsets.all(15),
-                margin: const EdgeInsets.all(5),
-                alignment: Alignment.center,
-                height: 100,
-                width: 100,
-                color: Colors.red,
+            children: <Widget>[
+              Image.asset(
+                "Assets/Images/img1.jpg",
+                fit: BoxFit.fitHeight,
+                // width: 300,
               ),
-              Container(
-                padding: const EdgeInsets.all(15),
-                margin: const EdgeInsets.all(5),
-                alignment: Alignment.center,
-                height: 100,
-                width: 100,
-                color: Colors.yellow,
+              const SizedBox(height: 20),
+              const Text(
+                "Second Pic",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 35, 141, 190),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              Container(
-                padding: const EdgeInsets.all(15),
-                margin: const EdgeInsets.all(5),
-                alignment: Alignment.center,
-                height: 100,
-                width: 100,
-                color: Colors.pink,
+              const SizedBox(height: 20),
+              Image.asset(
+                "Assets/Images/img2.jpg",
+                fit: BoxFit.cover,
+                // width: 300,
               ),
+              const Padding(
+                padding: EdgeInsets.all(20),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                "Fill Here...",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 74, 88, 180),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 15),
+              const TextField(
+                keyboardType: TextInputType
+                    .numberWithOptions(), // change it accordangly on your needs
+                decoration: InputDecoration(
+                  hintText: "Enter Your Phone Number",
+                  labelText: "Phone",
+                  border: OutlineInputBorder(),
+                ),
+              )
             ],
           ),
+        )),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const <Widget>[
+            // DrawerHeader(
+            //   child: Text(
+            //     "Akshay Kumar",
+            //     style: TextStyle(
+            //       color: Colors.yellowAccent,
+            //       fontSize: 20,
+            //     ),
+            //   ),
+            //   decoration: BoxDecoration(color: Colors.indigo),
+            // ),
+            UserAccountsDrawerHeader(
+              accountName: Text("Akshay Kumar"),
+              accountEmail: Text("x0akshay@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://wallpapercave.com/dwp1x/wp1865023.jpg"),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Account"),
+              subtitle: Text("Akshay"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Email"),
+              subtitle: Text("x0akshay@gmail.com"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.book),
+              title: Text("Dockuments"),
+              subtitle: Text("Important Files"),
+            ),
+            ListTile(
+              leading: Icon(Icons.book),
+              title: Text("Dockuments"),
+              subtitle: Text("Important Files"),
+            )
+          ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.refresh),
       ),
     );
   }
