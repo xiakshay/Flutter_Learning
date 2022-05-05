@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterlearning/bgImage.dart';
 import 'package:flutterlearning/drawer.dart';
 
 void main() {
@@ -46,11 +47,7 @@ class _HomePageState extends State<HomePage> {
             child: Card(
           child: Column(
             children: <Widget>[
-              Image.asset(
-                "Assets/Images/img1.jpg",
-                fit: BoxFit.fitHeight,
-                // width: 300,
-              ),
+              const BackgroundImage(), // sent into another dart file i.e bgImages
               const SizedBox(height: 20),
               const Text(
                 "Second Pic",
