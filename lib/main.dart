@@ -27,8 +27,19 @@ class HomePage extends StatelessWidget {
             child: Card(
               child: Column(
                 children: <Widget>[
-                  Image.asset("Assets/Images/img1.jpg"),
-                  Image.asset("Assets/Images/img2.jpg")
+                  Image.asset(
+                    "Assets/Images/img1.jpg",
+                    fit: BoxFit.fitHeight,
+                    width: 300,
+                  ),
+                  const SizedBox(height: 20),
+                  const Text("Second Pic"),
+                  const SizedBox(height: 20),
+                  Image.asset(
+                    "Assets/Images/img2.jpg",
+                    fit: BoxFit.cover,
+                    width: 300,
+                  )
                 ],
               ),
             )),
