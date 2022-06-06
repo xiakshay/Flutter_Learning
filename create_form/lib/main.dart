@@ -1,115 +1,215 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MaterialApp(
+      title: 'Flutter Demo',
+      home: const HomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+      ),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  // var name = "";
+  // var dob = "";
+  // var father = "";
+  // var mother = "";
+  // var mob = "";
+  // var email = "";
+  // var address = "";
+  // var pinno = "";
+
+  // final TextEditingController _nameEditingController = TextEditingController();
+  // final TextEditingController _dobEditingController = TextEditingController();
+  // final TextEditingController _fatherEditingController =
+  //     TextEditingController();
+  // final TextEditingController _motherEditingController =
+  //     TextEditingController();
+  // final TextEditingController _mobEditingController = TextEditingController();
+  // final TextEditingController _emailEditingController = TextEditingController();
+  // final TextEditingController _addressEditingController =
+  //     TextEditingController();
+  // final TextEditingController _pinnoEditingController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      appBar: AppBar(
+        title: const Text("Flutter Form"),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      body: const Padding(
+        padding: EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          child: Card(
+            child: FillTheForm(
+                // name = name,
+                // dob = dob,
+                // father = father,
+                // mother = mother,
+                // mob = mob,
+                // email = email,
+                // address = address,
+                // pinno = pinno,
+                // nameEditingController: _nameEditingController,
+                // dobEditingController: _dobEditingController,
+                // fatherEditingController: _fatherEditingController,
+                // motherEditingController: _motherEditingController,
+                // mobEditingController: _mobEditingController,
+                // emailEditingController: _emailEditingController,
+                // addressEditingController: _addressEditingController,
+                // pinnoEditingController: _pinnoEditingController,
+                ),
+          ),
+        ),
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class FillTheForm extends StatelessWidget {
+  // final String name, dob, father, mother, mob, email, address, pinno;
+  // final TextEditingController _nameEditingController ;
+  // final TextEditingController _dobEditingController ;
+  // final TextEditingController _fatherEditingController ;
+  // final TextEditingController _motherEditingController;
+  // final TextEditingController _mobEditingController ;
+  // final TextEditingController _emailEditingController ;
+  // final TextEditingController _addressEditingController
+  // final TextEditingController _pinnoEditingController ;
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  const FillTheForm({
+    Key? key,
+    // required this.name,
+    // required this.dob,
+    // required this.father,
+    // required this.mother,
+    // required this.mob,
+    // required this.email,
+    // required this.address,
+    // required this.pinno,
+    // required TextEditingController nameEditingController,
+    // required TextEditingController fatherEditingController,
+    // required TextEditingController dobEditingController,
+    // required TextEditingController mobEditingController,
+    // required TextEditingController motherEditingController,
+    // required TextEditingController emailEditingController,
+    // required TextEditingController addressEditingController,
+    // required TextEditingController pinnoEditingController,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+    return Column(
+      children: const <Widget>[
+        Text(
+          "* Required",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Color.fromARGB(255, 35, 141, 190),
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        SizedBox(
+          height: 6,
+        ),
+        TextField(
+          decoration: InputDecoration(
+            hintText: "Enter Your Name",
+            labelText: "Name",
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(
+          height: 6,
+        ),
+        TextField(
+          // keyboardType: TextInputType.numberWithOptions(),
+          decoration: InputDecoration(
+            hintText: "Enter Your DOB",
+            labelText: "DOB",
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(
+          height: 6,
+        ),
+        TextField(
+          decoration: InputDecoration(
+            hintText: "Enter Your Father's Name",
+            labelText: "Father's Name",
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(
+          height: 6,
+        ),
+        TextField(
+          decoration: InputDecoration(
+            hintText: "Enter Your mother's Name",
+            labelText: "Mother's Name",
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(
+          height: 6,
+        ),
+        TextField(
+          keyboardType: TextInputType.numberWithOptions(),
+          decoration: InputDecoration(
+            hintText: "Enter Your mob",
+            labelText: "Mob No",
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(
+          height: 6,
+        ),
+        TextField(
+          decoration: InputDecoration(
+            hintText: "Enter Your Email",
+            labelText: "Email",
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(
+          height: 6,
+        ),
+        TextField(
+          decoration: InputDecoration(
+            hintText: "Enter Your Address",
+            labelText: "Address",
+            border: OutlineInputBorder(),
+          ),
+        ),
+        SizedBox(
+          height: 6,
+        ),
+        TextField(
+          keyboardType: TextInputType.numberWithOptions(),
+          decoration: InputDecoration(
+            hintText: "Enter Your Pin No.",
+            labelText: "Pin No.",
+            border: OutlineInputBorder(),
+          ),
+        )
+      ],
     );
   }
 }
