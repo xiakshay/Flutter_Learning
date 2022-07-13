@@ -8,6 +8,35 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  _buildEmailTF() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Email',
+        ),
+        const SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          height: 60.0,
+          child: const TextField(
+            keyboardType: TextInputType.emailAddress,
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.email,
+                color: Colors.white,
+              ),
+              hintText: 'Enter your email',
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,22 +80,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   const SizedBox(height: 30.0),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Email',
-                      ),
-                      const SizedBox(height: 10.0),
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        height: 60.0,
-                        child: const TextField(
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                      )
-                    ],
-                  )
+                  _buildEmailTF(),
                 ],
               ),
             ),
@@ -76,5 +90,3 @@ class _LoginState extends State<Login> {
     );
   }
 }
-
-class widget {}
