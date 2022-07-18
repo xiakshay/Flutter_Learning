@@ -37,6 +37,49 @@ class _LoginState extends State<Login> {
     );
   }
 
+  _buildPassTF() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Password',
+        ),
+        const SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          height: 60.0,
+          child: const TextField(
+            obscureText: true,
+            keyboardType: TextInputType.emailAddress,
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.lock,
+                color: Colors.white,
+              ),
+              hintText: 'Enter your Password',
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  _buildForgotPasswordBtn() {
+    return Container(
+      alignment: Alignment.centerRight,
+      child: FlatButton(
+        onPressed: () => print('Forgot Password Button Pressed'),
+        padding: const EdgeInsets.only(right: 0.0),
+        child: const Text(
+          'Forgot Password?',
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,6 +124,11 @@ class _LoginState extends State<Login> {
                   ),
                   const SizedBox(height: 30.0),
                   _buildEmailTF(),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+                  _buildPassTF(),
+                  _buildForgotPasswordBtn(),
                 ],
               ),
             ),
