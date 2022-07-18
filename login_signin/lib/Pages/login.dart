@@ -8,6 +8,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool _rememberMe = false;
+
   _buildEmailTF() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,6 +82,55 @@ class _LoginState extends State<Login> {
     );
   }
 
+  Widget _buildRememberMe() {
+    return Container(
+      height: 20.0,
+      child: Row(
+        children: [
+          Theme(
+            data: ThemeData(unselectedWidgetColor: Colors.white),
+            child: Checkbox(
+              value: _rememberMe,
+              checkColor: Colors.green,
+              activeColor: Colors.white,
+              onChanged: (value) {
+                setState(() {
+                  _rememberMe = value!;
+                });
+              },
+            ),
+          ),
+          const Text(
+            'Remember Me',
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLoginBtn() {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 25.0),
+      width: double.infinity,
+      child: RaisedButton(
+        elevation: 5.0,
+        onPressed: () => print('Login Button Pressed'),
+        padding: const EdgeInsets.all(15.0),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+        color: Colors.white,
+        child: const Text(
+          'Login',
+          style: TextStyle(
+              color: Color(0xFF527DAA),
+              letterSpacing: 1.5,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,6 +180,19 @@ class _LoginState extends State<Login> {
                   ),
                   _buildPassTF(),
                   _buildForgotPasswordBtn(),
+                  _buildRememberMe(),
+                  _buildLoginBtn(),
+                  Column(
+                    children: const [
+                      Text(
+                        '- OR -',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w400),
+                      ),
+                      SizedBox(height: 20.0),
+                      Text('Sign in with'),
+                    ],
+                  )
                 ],
               ),
             ),
